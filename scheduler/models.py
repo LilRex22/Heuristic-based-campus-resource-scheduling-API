@@ -4,6 +4,7 @@ from django.db import models
 class Lecturer(models.Model):
     Name = models.CharField(max_length=200)
     Department = models.CharField(max_length=200)
+    Available = models.BooleanField(default=True)
     
     def __str__(self):
         return self.Name
@@ -28,7 +29,7 @@ class Course(models.Model):
     Course_code = models.CharField(max_length=50)
     Course_title = models.CharField(max_length=50)
     Level = models.ForeignKey(Level, on_delete=models.CASCADE)
-    Credit = models.IntegerField(max_length=5)
+    Credit = models.IntegerField()
     Student = models.CharField(max_length=200)
     Lecturer = models.ForeignKey(Lecturer, on_delete=models.CASCADE)
     Room = models.ForeignKey(Room, on_delete=models.CASCADE)
