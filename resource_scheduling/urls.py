@@ -23,4 +23,6 @@ urlpatterns = [
     path('', views.index),
     path('api/courses/', views.courses),
     path('api/lecturers/', views.lecturers),
+    path('api/classrooms/', views.classrooms),
+    path('api/timeslots/', views.timeslots),
 ]
