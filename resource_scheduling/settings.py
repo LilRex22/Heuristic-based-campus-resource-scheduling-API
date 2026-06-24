@@ -36,7 +36,8 @@ CORS_ALLOWED_ORIGINS = [
 INSTALLED_APPS = [
     'scheduler',
     'corsheaders',
-    'rest_framework',   
+    'rest_framework',
+    'rest_framework_simplejwt',   
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

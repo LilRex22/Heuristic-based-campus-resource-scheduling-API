@@ -12,8 +12,13 @@ def index(request):
 @api_view(['GET'])
 def courses(request):
     course = Course.objects.all()
+    no_of_course = len(course)
     x = CourseSerializer(course, many=True)
-    return Response(x.data)
+    
+    return Response({
+        'courses': x.data,
+        'count': no_of_course
+    })
 
 @api_view(['GET'])
 def lecturers(request):
